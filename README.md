@@ -28,7 +28,7 @@ New store form | /stores/new | GET | User requests to add store. Server returns 
 Create store when form is submitted | /stores | POST | User submits the form. The server grabs the attributes submitted through the form and uses them to create a new object. The server returns the store page with the new store displayed.
 Update a store form | /stores/:id/edit | GET | User requests to update store. Server returns the page with a form that will let the user update the store.
 Update database when store edit form is submitted | /stores/:id | PATCH | User submits the form. The server grabs the attributes submitted through the form and uses them to update the store with the id in the URL. The server returns the store page.
-Delete the store resource from the database | /stores/:id | DELETE | 
+Delete the store resource from the database | /stores/:id | DELETE | User submits a delete form. Server grabs the id for the store from the params and found in the URL, finds the store with the matching id and destroys it in the database
 
 
 ## Setup/Installation Requirements

@@ -7,3 +7,7 @@ require('./lib/store')
 also_reload('lib/**/*.rb')
 
 require('pry')
+
+get('/') do
+  erb(:index)
+end

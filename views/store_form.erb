@@ -4,6 +4,25 @@
   <label for="name">Store Name:</label>
   <input id="name" name="name" type="text">
   <button class="btn" type="submit">Add store</button>
+
+<h3>Add Brands:</h3>
+<div class="checkbox">
+  <% if @brands.any?() %>
+    <% @brands.each() do |brand| %>
+
+      <label name="brand_ids">
+        <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>">
+        <%= brand.name() %>
+      </label>
+    <% end %>
+
+  <% else %>
+
+    <p>There are no tags yet!</p>
+  <% end %>
+</div>
+
+
 </form>
 <hr>
 <a href="/"><button class="btn" type="button">home</button></a>

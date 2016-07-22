@@ -49,7 +49,7 @@ delete("/stores/:id") do
 end
 
 get('/brands/new') do
-  @stores = Store.all()
+   @stores = Store.all()
   erb(:brand_form)
 end
 

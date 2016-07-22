@@ -1,1 +1,15 @@
 <h1>All stores in our distribution system:</h1>
+
+
+<% if @stores.any?() %>
+  <ul>
+    <% @stores.each() do |store| %>
+      <li><a href="store/<%= store.id() %>" id='<% store.id() %>' ><%= store.name() %></a></li>
+      <% end %>
+  </ul>
+
+<% else %>
+
+    <p>There are no stores yet!</p>
+
+<% end %>

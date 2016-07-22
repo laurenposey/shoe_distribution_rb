@@ -1,20 +1,25 @@
 <h3>Add a brand</h3>
 
-<form action="/brands" method="post">
+<form action="/brands/new" method="post">
 
   <label for="name">Brand Name:</label>
   <input id="name" name="name" type="text">
 
-  <% if @stores.any?() %>
-  <p>Click on a store to assign to brand</p>
+  <h3>Stores:</h3>
+  <div class="checkbox">
+    <% if @stores.any?() %>
+      <% @stores.each() do |store| %>
 
-    <% @stores.each() do |store| %>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="store_id" value="<%= store.id() %>"><%= store.name() %>
+        <label name="store_ids">
+          <input type="checkbox" name="store_ids[]" value="<%= store.id() %>">
+          <%= store.name() %>
         </label>
-      </div>
       <% end %>
-  <% end %>
+
+    <% else %>
+
+      <p>There are no ingredients yet!</p>
+    <% end %>
+    <br>
   <button type="submit">Add brand</button>
 </form>

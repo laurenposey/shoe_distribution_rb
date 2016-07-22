@@ -10,7 +10,7 @@ _An application to help shoe distributor keep track of brands are at what stores
 
 ## Specifications
 #### User Stories:
-* _As a user, I want to be able to add, update, delete and list shoe stores._
+* _As a user, I want to be able to add, update, delete and list shoe stores.DONE_
 * _As a user, I want to be able to add shoe brands in the application (no updating, listing or destroying  brands)._
 * _As a user, I want to be able to add shoe brands to a store to show where they are sold._
 * _As a user, I want to be able to see all of the brands a store sells on the individual store page._

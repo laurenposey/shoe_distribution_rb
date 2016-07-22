@@ -9,15 +9,15 @@ also_reload('lib/**/*.rb')
 require('pry')
 
 get('/') do
-  @stores = Stores.all()
+  @stores = Store.all()
   erb(:index)
 end
 
-get('stores/new') do
+get('/stores/new') do
   erb(:store_form)
 end
 
-post('/stores') do
+post('/stores/new') do
   name = params.fetch('name')
   store = Store.create({:name => name, :id => nil})
   @stores = Store.all()
@@ -53,7 +53,7 @@ get('/brands/new') do
   erb(:brand_form)
 end
 
-post("/brands") do
+post("/brands/new") do
   name = params.fetch("name")
   store_id = params.fetch("store_id").to_i()
   @store = Store.find(store_id)

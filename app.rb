@@ -55,7 +55,7 @@ end
 
 post("/brands/new") do
   name = params.fetch("name")
-  store_ids = params.fetch("store_ids").to_i()
+  store_ids = params['store_ids']
   @brand = Brand.create({:name => name, :store_ids => [store_ids]})
   @stores = Store.all()
   erb(:index)

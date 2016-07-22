@@ -14,20 +14,28 @@ get('/') do
 end
 
 get('/stores/new') do
+  @brands = Brand.all()
   erb(:store_form)
 end
 
 post('/stores/new') do
   name = params.fetch('name')
   store = Store.create({:name => name, :id => nil})
+
   @stores = Store.all()
   erb(:index)
+end
+
+get("/:id") do
+  @store = Store.find(params.fetch("id").to_i())
+  erb(:store)
 end
 
 get("/stores/:id") do
   @store = Store.find(params.fetch("id").to_i())
   erb(:store)
 end
+
 
 get("/stores/:id/edit") do
   @store = Store.find(params.fetch("id").to_i())

@@ -14,3 +14,4 @@ RSpec.configure do |config|
       store.destroy()
     end
   end
+end

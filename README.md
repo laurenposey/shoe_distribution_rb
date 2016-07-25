@@ -46,8 +46,7 @@ Create brand when form is submitted | /brands/new | POST | User submits the form
 _PROJECT INCOMPLETE_
 
 * _No integration specs_
-* _Doesn't save with a capital letter_
-* _No validation for empty inout forms_
+
 
 ## Support and contact details
 

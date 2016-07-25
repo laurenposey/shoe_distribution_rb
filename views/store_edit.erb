@@ -19,14 +19,14 @@
         <li>
           <form action="/brands/<%= brand.id() %>/remove/<%= @store.id() %>" method="post">
             <input type="hidden" name="_method" value="patch">
-            <button type="submit">+</button> <%= brand.name() %>
+            <button type="submit">Remove</button> <%= brand.name() %>
          </form>
         </li>
         <% else %>
         <li>
           <form action="/brands/<%= brand.id() %>/add/<%= @store.id() %>" method="post">
             <input type="hidden" name="_method" value="patch">
-            <button type="submit">-</button> <%= brand.name() %>
+            <button type="submit">Add</button> <%= brand.name() %>
          </form>
         </li>
       <% end %>

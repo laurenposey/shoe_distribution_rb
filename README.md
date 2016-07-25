@@ -31,6 +31,9 @@ Update database when store edit form is submitted | /stores/:id | PATCH | User s
 Delete the store resource from the database | /stores/:id | DELETE | User submits a delete form. Server grabs the id for the store from the params and found in the URL, finds the store with the matching id and destroys it in the database
 New brand form | /brands/new | GET | User requests to add brand. Server returns a page with a form that will let the user add a brand
 Create brand when form is submitted | /brands/new | POST | User submits the form. The server grabs the attributes submitted through the form and uses them to create a new object. The server returns the index page with the new brand displayed on add store form.
+List all brands | /brands | GET | User requests page. Server collects all brands and returns page to display them.
+Update database when brand remove form is submitted | /brands/:id/remove/:store_id | PATCH | User submits the form. The server grabs the attributes submitted through the form and uses them to update the store with matching store_id as well as brand with the id in the URL. Simultaneously updates brand associated with store_id and store associated with brand_id. The server returns the store edit page.
+Update database when brand add form is submitted | /brands/:id/add/:store_id | PATCH | User submits the form. The server grabs the attributes submitted through the form and uses them to update the store with matching store_id as well as brand with the id in the URL. Simultaneously updates brand associated with store_id and store associated with brand_id. The server returns the store edit page.
 
 ## Setup/Installation Requirements
 
@@ -43,8 +46,7 @@ Create brand when form is submitted | /brands/new | POST | User submits the form
 * _In terminal run $ ruby app.rb_
 
 ## Known Bugs
-_PROJECT INCOMPLETE_
-* _Will not update store brands_
+_none_
 
 ## Support and contact details
 

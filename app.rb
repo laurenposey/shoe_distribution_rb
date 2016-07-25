@@ -18,13 +18,14 @@ get('/stores/new') do
   erb(:store_form)
 end
 
-post('/stores/new') do
+post('/stores') do
   name = params.fetch('name')
-  store = Store.create({:name => name, :id => nil})
-
+  brand_ids = params['brand_ids']
+  store = Store.create({:name => name, :brand_ids => brand_ids})
   @stores = Store.all()
   erb(:index)
 end
+
 
 get("/:id") do
   @store = Store.find(params.fetch("id").to_i())
@@ -64,7 +65,7 @@ end
 post("/brands/new") do
   name = params.fetch("name")
   store_ids = params['store_ids']
-  @brand = Brand.create({:name => name, :store_ids => [store_ids]})
+  @brand = Brand.create({:name => name, :store_ids => store_ids})
   @stores = Store.all()
   erb(:index)
 end

@@ -52,18 +52,18 @@ patch('/brands/:id/remove/:store_id') do
   id = params.fetch('id').to_i()
   brand = Brand.find(id)
   store_id = params.fetch('store_id')
-  store = Store.find(store_id)
-  store.brands.destroy(brand)
-  redirect to("/store/#{store_id}/edit")
+  @store = Store.find(store_id)
+  @store.brands.destroy(brand)
+  redirect to("/stores/#{store_id}/edit")
 end
 
 patch('/brands/:id/add/:store_id') do
   id = params.fetch('id').to_i()
   brand = Brand.find(id)
   store_id = params.fetch('store_id')
-  store = Store.find(store_id)
-  store.brands.push(brand)
-  redirect to("/store/#{store_id}/edit")
+  @store = Store.find(store_id)
+  @store.brands.push(brand)
+  redirect to("/stores/#{store_id}/edit")
 end
 
 delete("/stores/:id") do

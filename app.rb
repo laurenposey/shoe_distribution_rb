@@ -40,11 +40,12 @@ get("/stores/:id/edit") do
   erb(:store_edit)
 end
 
-patch("/stores/:id") do
+patch("/stores/:id/stores/:id") do
   name = params.fetch("name")
   @store = Store.find(params.fetch("id").to_i())
   @store.update({:name => name})
-  redirect to ("/stores/#{@store.id()}")
+  @stores = Store.all()
+  erb(:index)
 end
 
 delete("/stores/:id") do

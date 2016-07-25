@@ -43,9 +43,8 @@ Create brand when form is submitted | /brands/new | POST | User submits the form
 * _In terminal run $ ruby app.rb_
 
 ## Known Bugs
-
-_none_
-
+_PROJECT INCOMPLETE_
+* _Will not update store brands_
 
 ## Support and contact details
 

@@ -42,7 +42,7 @@ describe('update a store', {:type => :feature}) do
     click_link('Macys')
     click_link('Update')
     fill_in("name", :with => 'jcrew')
-    click_button('Update')
+    click_button('Update name')
     expect(page).to have_content('Fancy Shoes')
   end
 end

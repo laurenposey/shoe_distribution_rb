@@ -10,8 +10,37 @@
 </form>
 <hr>
 
+<h3>Update Brands</h3>
+
+<% if @brands.any?() %>
+  <ul>
+    <% @brands.each() do |brand| %>
+      <% if @store.brands.include?(brand) %>
+        <li>
+          <form action="/brands/<%= brand.id() %>/remove/<%= @store.id() %>" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <button type="submit">Remove brand</button> <%= brand.name() %>
+         </form>
+        </li>
+        <% else %>
+        <li>
+          <form action="/brands/<%= brand.id() %>/add/<%= @store.id() %>" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <button type="submit">Add brand</button> <%= brand.name() %>
+         </form>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+<% else %>
+
+    <p>There are no tags added yet</p>
+
+<% end %>
 
 
+<hr>
 <form action="/stores/<%= @store.id() %>" method="post">
   <input name="_method" type="hidden" value="delete">
 

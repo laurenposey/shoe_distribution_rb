@@ -6,7 +6,7 @@
 
 ## Description
 
-_An application to help shoe distributor keep track of brands are at what stores and vice versa._
+_An application to help shoe distributor keep track of what brands are at what stores and vice versa._
 
 ## Specifications
 #### User Stories:

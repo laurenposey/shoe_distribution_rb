@@ -5,7 +5,6 @@ require("sinatra/activerecord")
 require('./lib/brand')
 require('./lib/store')
 also_reload('lib/**/*.rb')
-
 require('pry')
 
 get('/') do
@@ -21,9 +20,13 @@ end
 post('/stores') do
   name = params.fetch('name')
   brand_ids = params['brand_ids']
-  store = Store.create({:name => name, :brand_ids => brand_ids})
+  @store = Store.create({:name => name, :brand_ids => brand_ids})
   @stores = Store.all()
-  erb(:index)
+  if @store.save()
+    erb(:index)
+  else
+    erb(:errors)
+  end
 end
 
 
@@ -61,5 +64,9 @@ post("/brands/new") do
   store_ids = params['store_ids']
   @brand = Brand.create({:name => name, :store_ids => store_ids})
   @stores = Store.all()
-  erb(:index)
+  if @brand.save()
+    erb(:index)
+  else
+    erb(:error_brand)
+  end
 end
